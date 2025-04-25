@@ -1,0 +1,219 @@
+:root {
+  --primary: #4361ee;
+  --secondary: #3a0ca3;
+  --accent: #4895ef;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --success: #4cc9f0;
+  --danger: #f72585;
+  --border-radius: 8px;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f5f7ff;
+  color: var(--dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+}
+
+header {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: white;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+footer {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  margin-right: 1rem;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.item > label {
+  flex-grow: 1;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.item input[type="checkbox"]:checked + label {
+  color: #666;
+  text-decoration: line-through;
+}
+
+.item svg {
+  width: 24px;
+  height: 24px;
+  color: var(--danger);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.item svg:hover {
+  transform: scale(1.1);
+}
+
+.addForm {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+}
+
+.addForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.addForm input[type='text'] {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.addForm input[type='text']:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: var(--secondary);
+  transform: translateY(-1px);
+}
+
+.searchForm {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+}
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.searchForm input[type='text'] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.searchForm input[type='text']:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.error {
+  color: var(--danger);
+  background-color: rgba(247, 37, 133, 0.1);
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .App {
+    border-radius: 0;
+  }
+  
+  header {
+    padding: 0.75rem;
+  }
+  
+  header h1 {
+    font-size: 1.25rem;
+  }
+}
